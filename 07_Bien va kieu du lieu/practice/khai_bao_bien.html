@@ -1,0 +1,26 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Variable</title>
+</head>
+<body>
+<button type="button" onclick="showMessage()" > Tìm giá trị</button>
+<div></div>
+  <script>
+    let i
+    i=10
+    let f
+    f=20.5
+    let b
+    b=true
+    let s
+    s='Ha Noi'
+    function showMessage() {
+      const eleDiv = document.querySelector("div");
+      eleDiv.innerHTML = i + "<br>" + b + "<br>" + s + "<br>" + f;
+    }
+  </script>
+
+</body>
+</html>

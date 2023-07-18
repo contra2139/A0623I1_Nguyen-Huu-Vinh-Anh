@@ -1,0 +1,105 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>form_nhap_lieu</title>
+  <style>
+    h2 {
+      background-color: #FF4500;
+      padding: 10px;
+      text-align: center;
+      display: flex; justify-content: center;
+      color: antiquewhite;
+    }
+    body {
+      font-family: Arial, sans-serif;
+      background-color: #A9A9A9;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      height: 100vh;
+      margin: 0;
+    }
+
+    label {
+      color: #4170eb;
+    }
+     input[type='text'],
+     input[type='email'],
+     textarea {
+      width: 300px;
+      padding: 10px;
+      border: none;
+      border-radius: 5px;
+      mso-border-shadow: yes;
+      margin-bottom: 10px;
+      color: #4170eb;
+
+    }
+    .form-container input[type='checkbox']{
+      position: relative;
+      appearance: none;
+      width: 15px;
+      height: 15px;
+      border: 2px solid #bbb;
+      border-radius: 5px;
+      outline: none;
+      cursor: pointer;
+    }
+
+     input[type='submit'],
+     input[type='reset']
+    {
+      padding: 10px 20px;
+      border: none;
+      border-radius: 5px;
+      background-color: dimgray;
+      cursor: pointer;
+      color: gainsboro;
+
+    }
+    p {
+      color: #4170eb;
+    }
+
+  </style>
+</head>
+<body>
+<header><h2>SỞ THÍCH CỦA BẠN</h2></header>
+
+<form action="" method="GET">
+  <label for="name">Họ và tên:</label>
+  <input type="text" id="name" name="name" required><br><br>
+
+  <label for="email">Email:</label>
+  <input type="email" id="email" name="email" required><br><br>
+
+  <p> Sở thích</p>
+  <div class="orange-label">
+    <input type="checkbox" id="sports" name="hobby" value="Thể thao">
+    <label for="sports">Thể thao</label>
+    <input type="checkbox" id="music" name="hobby" value="Âm nhạc">
+    <label for="music">Âm nhạc</label>
+    <input type="checkbox" id="reading" name="hobby" value="Đọc sách">
+    <label for="reading">Đọc sách</label><br/><br/>
+    <input type="checkbox" id="web" name="hobby" value="Lướt web">
+    <label for="web">Lướt web</label>
+    <input type="checkbox" id="games" name="hobby" value="Chơi game">
+    <label for="games">Chơi game</label>
+    <input type="checkbox" id="movie" name="hobby" value="Điện ảnh">
+    <label for="movie">Điện ảnh</label><br/><br/>
+    <input type="checkbox" id="travel" name="hobby" value="Du lịch">
+    <label for="travel">Du lịch</label>
+  </div>
+    <style>
+    .orange-label label{
+      color: peru;
+    }
+    </style>
+  <br/><br/>
+  <input type="submit" value="Gửi thông tin">
+  <input type="reset" value="Nhập lại">
+</form>
+
+</body>
+</html>

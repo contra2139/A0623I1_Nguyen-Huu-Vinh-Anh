@@ -1,0 +1,62 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>DT_hinh_chu_nhat</title>
+    <style>
+
+    label{
+        display: inline-block ;
+        width: 100px;
+
+    }
+      .lwidth {
+        color: red;
+      }
+      .lheight {
+        color: #4170eb;
+      }
+      .ldientich{
+        color: goldenrod;
+        background: wheat;
+      }
+      .lreset{
+          color: goldenrod;
+          background: dimgray;
+      }
+    </style>
+</head>
+<body>
+
+<label class="lwidth" for="width">Chiều rộng</label>
+<input type="text" id="width" >
+<button class="lreset" onclick="reset()">Nhập lại giá trị</button>
+<br><br>
+<label  class="lheight" for="height">Chiều cao</label>
+<input type="text" id="height" >
+<button class="ldientich" onclick="calculateArea()">Tính diện tích</button>
+<br><br>
+
+<div id="area"></div>
+<script>
+  function calculateArea() {
+    let width = document.getElementById("width").value;
+    let height = document.getElementById("height").value;
+    let area = width * height;
+    if (width <= 0 || height <= 0){
+        alert('Giá trị nhập vào không hợp lệ')
+      document.getElementById("area").innerHTML = "";
+      return;}
+    document.getElementById("area").innerHTML = "Diện tích hình chữ nhật là: " + area;
+  }
+  function reset() {
+      document.getElementById("width").value = "";
+      document.getElementById("height").value = "";
+      document.getElementById("area").innerHTML = "";
+  }
+
+
+
+</script>
+</body>
+</html>
