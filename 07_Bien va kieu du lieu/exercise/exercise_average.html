@@ -1,0 +1,56 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Average</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif
+        }
+        form {
+            background: lightsteelblue;
+            padding: 20px 30px;
+            align-items: center;
+            margin-bottom: 10px;
+            color: #4170eb;
+        }
+        label {
+            display: inline-block;
+            width: 150px;
+        }
+
+        #average{
+            margin-top: initial;
+            color: #FF4500;
+        }
+    </style>
+</head>
+<body>
+<form>
+  <label for="vatly">Điểm môn Vật lý</label>
+  <input type="number" id="vatly" name="vatly">
+    <br><br>
+  <label for="hoahoc">Điểm môn Hóa học</label>
+  <input type="number" id="hoahoc" name="hoahoc">
+    <br><br>
+  <label for="sinhhoc">Điểm môn Sinh học</label>
+  <input type="number" id="sinhhoc" name="sinhhoc">
+    <br><br>
+    <button type="reset">Nhập lại điểm</button>
+</form>
+<button type="button" onclick="calculateAver()"> Tính điểm trung bình </button>
+<div id="average"></div>
+<script>
+function calculateAver() {
+    const myVatly = parseFloat(document.getElementById('vatly').value);
+    const myHoahoc = parseFloat(document.getElementById('hoahoc').value);
+    const mySinhhoc = parseFloat(document.getElementById('sinhhoc').value);
+    let avg
+    avg = ((myVatly + myHoahoc + mySinhhoc) / 3).toFixed(2);
+
+    document.getElementById('average').innerHTML = avg.toString();
+
+}
+</script>
+</body>
+</html>
