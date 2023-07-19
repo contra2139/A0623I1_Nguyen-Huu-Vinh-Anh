@@ -23,6 +23,10 @@
             margin-top: initial;
             color: #FF4500;
         }
+        #sum{
+            display: inline-block;
+            width: 150px
+        }
     </style>
 </head>
 <body>
@@ -38,8 +42,12 @@
     <br><br>
     <button type="reset">Nhập lại điểm</button>
 </form>
+<label for="sum">Tổng điểm</label>
+<input id="sum" onclick="calculateSum()">
+<br><br>
 <button type="button" onclick="calculateAver()"> Tính điểm trung bình </button>
 <div id="average"></div>
+<div id="tong"></div>
 <script>
 function calculateAver() {
     const myVatly = parseFloat(document.getElementById('vatly').value);
@@ -47,9 +55,15 @@ function calculateAver() {
     const mySinhhoc = parseFloat(document.getElementById('sinhhoc').value);
     let avg
     avg = ((myVatly + myHoahoc + mySinhhoc) / 3).toFixed(2);
+    average.innerHTML = avg.toString();
 
-    document.getElementById('average').innerHTML = avg.toString();
-
+}
+function calculateSum(){
+    const myVatly = parseFloat(document.getElementById('vatly').value);
+    const myHoahoc = parseFloat(document.getElementById('hoahoc').value);
+    const mySinhhoc = parseFloat(document.getElementById('sinhhoc').value);
+    let mySum = (myVatly + myHoahoc + mySinhhoc);
+    document.getElementById("sum").value = mySum.toString();
 }
 </script>
 </body>
