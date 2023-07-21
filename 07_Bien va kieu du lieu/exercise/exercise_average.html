@@ -55,8 +55,8 @@ function calculateAver() {
     const mySinhhoc = parseFloat(document.getElementById('sinhhoc').value);
     let avg
     avg = ((myVatly + myHoahoc + mySinhhoc) / 3).toFixed(2);
-    average.innerHTML = avg.toString();
-
+    // average.innerHTML = avg.toString();
+    document.getElementById('average').innerHTML = avg.toString();
 }
 function calculateSum(){
     const myVatly = parseFloat(document.getElementById('vatly').value);

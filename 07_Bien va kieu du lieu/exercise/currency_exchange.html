@@ -1,0 +1,57 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>currency converter</title>
+</head>
+<body>
+<h1>Currency converter</h1>
+
+<label for="myAmount">Amount_exchange</label><br>
+<input type="number" id="myAmount" min="0" step="0.01" name="amount">
+
+<select name="from_Currency">
+  <option value="VND">VND</option>
+  <option value="USD">USD</option>
+</select>
+
+<label for="yourCurrency">To Currency</label>
+<select id="yourCurrency" name="to_Currency">
+  <option value="VND">VND</option>
+  <option value="USD">USD</option>
+</select>
+<br><br>
+
+<button onclick="getExchangeRate()">Convert</button>
+
+<div id="res"></div>
+
+<script>
+  const tygiaUSD = 23000;
+
+  function getExchangeRate() {
+    const amount = parseFloat(document.getElementById("myAmount").value);
+
+    const fromCurrency = document.querySelector("select[name='from_Currency']").value;
+    const toCurrency = document.querySelector("select[name='to_Currency']").value;
+
+    if (amount === 0 || amount < 0) {
+      alert("Vui long nhap so tien hop le.");
+      return;
+    }
+
+    let result;
+
+    if (fromCurrency === "VND" && toCurrency === "USD") {
+      result = amount / tygiaUSD;
+    } else if (fromCurrency === "USD" && toCurrency === "VND") {
+      result = amount * tygiaUSD;
+    } else {
+      result = amount;
+    }
+
+    document.getElementById("res").innerText = `Ket qua: ${result.toFixed(2)} ${toCurrency}`;
+  }
+</script>
+</body>
+</html>
