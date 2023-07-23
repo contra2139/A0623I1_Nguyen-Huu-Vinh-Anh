@@ -1,0 +1,58 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Caculator</title>
+</head>
+<body>
+
+<form>
+  <label for="numberA">Nhap so X</label>
+  <input type="number" id="numberA" step="0.01" name="numberA"/>
+
+  <label for="numberB">Nhap so Y</label>
+  <input type="number" id="numberB" step="0.01" name="numberB"/>
+
+  <label for="reset"></label>
+  <input type="reset" id="reset" name="reset">
+<br><br><br>
+</form>
+  <button onclick="calNumberAdd()">Addition (+)</button>
+  <button onclick="calNumberSub()">Subtraction (-)</button>
+  <button onclick="calNumberMui()">Multiplication (*)</button>
+  <button onclick="calNumberDiv()">Division (/)</button>
+
+
+<div id="cal"></div>
+<script>
+function calNumberAdd() {
+  const a = parseFloat(document.getElementById('numberA').value);
+  const b = parseFloat(document.getElementById('numberB').value);
+  const c = a + b
+  document.getElementById('cal').innerText = `ket qua phep cong : ${c.toFixed(2).replace(/(\d)(?=(\d{3})+(?!\d))/g, "$1,")}`;
+}
+function calNumberSub() {
+  const a = parseFloat(document.getElementById('numberA').value);
+  const b = parseFloat(document.getElementById('numberB').value);
+  const d = a - b
+  document.getElementById('cal').innerText = `ket qua phep tru : ${d.toFixed(2).replace(/(\d)(?=(\d{3})+(?!\d))/g, "$1,")}`;
+}
+function calNumberMui() {
+  const a = parseFloat(document.getElementById('numberA').value);
+  const b = parseFloat(document.getElementById('numberB').value);
+  const e = a * b
+  document.getElementById('cal').innerText = `ket qua phep nhan: ${e.toFixed(2).replace(/(\d)(?=(\d{3})+(?!\d))/g, "$1,")}`;
+}
+function calNumberDiv() {
+  const a = parseFloat(document.getElementById('numberA').value);
+  const b = parseFloat(document.getElementById('numberB').value);
+  if (b!==0) {
+    const f = a/b;
+    document.getElementById('cal').innerText = `ket qua phep chia: ${f.toFixed(2).replace(/(\d)(?=(\d{3})+(?!\d))/g, "$1,")}`;
+  }  else
+    {document.getElementById('cal').innerText = 'khong the chia cho 0'}
+
+}
+</script>
+</body>
+</html>
