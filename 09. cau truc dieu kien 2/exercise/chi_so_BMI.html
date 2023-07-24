@@ -1,0 +1,72 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Body mass index_BMI</title>
+    <style>
+    h3 {
+        background: #4170eb;
+        padding-top: 10px;
+        display: flex;
+        justify-content: center;
+        color: lightsteelblue;
+    }
+    form {
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        color: brown;
+
+    }
+    .container {
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        height: 50px;
+    }
+    .container .element {
+        width: 100px;
+        height: 50px;
+    }
+
+    </style>
+</head>
+<body>
+<h3>BẢNG TÍNH CHỈ SỐ BMI</h3>
+<form>
+<label for="myWeigth">Chỉ số cân nặng(kg)</label>
+<input type="number" id="myWeigth" step="0.01" name="myWeight">
+
+<label for="myHeight">Chỉ số chiều cao(met)</label>
+<input type="number" id="myHeight" step="0.01" name="myHeight">
+
+<label for="reset">Nhập lại dữ liệu</label>
+<input type="reset" id="reset" name="reset">
+</form>
+<br> <br>
+<div class="container">
+    <div class="element">
+        <button onclick="calMyBmi()" id="btn">Tính tỷ số BMI</button>
+    </div>
+</div>
+
+<div id='myBMI'></div>
+<script>
+  function calMyBmi() {
+    const x = parseFloat(document.getElementById('myWeigth').value);
+    const y = parseFloat(document.getElementById('myHeight').value);
+    const z = x / (y ** 2);
+    if (z < 18.5) {
+      document.getElementById('myBMI').innerText = "UnderWeight";
+    } else if (z < 25) {
+      document.getElementById('myBMI').innerText ="Normal";
+    } else if (z < 30) {
+      document.getElementById('myBMI').innerText =('Overweight');
+    } else {
+      document.getElementById('myBMI').innerText =('Obese');
+    }
+  }
+</script>
+
+</body>
+</html>

@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Mourse</title>
+</head>
+<body>
+<form>
+    <img id="myBallImage" src="pngtree-3d-golden-black-soccer-ball.png" alt="unable to display the image"/>
+    <h4>Click button below to move the ball to right</h4>
+
+    <button onclick="moveRight()"> Click me !</button>
+
+</form>
+
+    <div id="myimg"></div>
+<script>
+window.onload = function () {
+    let imObj = null
+    
+    function init() {
+        imObj = document.getElementById('myBallImage');
+        imObj.style.position = "relative";
+        imObj.style.left = '0px'
+    }
+
+    init();
+
+    function moveRight() {
+        imObj.style.left = parseInt(imObj.style.left) + 10 + "px";
+    }
+}
+</script>
+</body>
+</html>
