@@ -1,0 +1,67 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Caulenh_SwitchCase</title>
+    <style>
+        h2 {
+            background: #4170eb;
+            padding-top: 10px;
+            display: flex;
+            justify-content: center;
+            color: darkred;}
+        h4 {
+            background: wheat;
+            color: darkblue;
+            display: flex;
+            justify-content: center;
+        }
+
+    </style>
+</head>
+<body>
+<h2>BẢNG TÍNH SỐ NGÀY TRONG THÁNG</h2>
+<label for="month_1">Vui lòng cho biết THÁNG đầu tiên </label>
+<input type="number" id="month_1" name="month">
+<button onclick="dayOfMonth(month_1.value, monthly)" id="bt1">Tính số ngày</button>
+
+<div id="monthly"></div>
+
+<h4>và</h4>
+
+<label for="month_2">Vui lòng cho biết THÁNG thứ nhì </label>
+<input type="number" id="month_2" name="month">
+<button onclick="dayOfMonth(month_2.value, monthly2)" id="bt2">Tính số ngày</button>
+<div id="monthly2"></div>
+
+<script>
+    function dayOfMonth(monthy,ele) {
+        if (monthy <= 0 || monthy > 12) {
+            alert("Dữ liệu nhập vào không hợp lệ - Vui lòng nhập lại");
+        } else {
+            switch (+monthy) {
+                case 1:
+                case 3:
+                case 5:
+                case 7:
+                case 8:
+                case 10:
+                case 12:
+                    ele.innerText = ` Tháng ${monthy} có 31 ngày`
+                    break;
+                case 2:
+                    ele.innerText = ` Tháng ${monthy} có 28 hoặc 29 ngày`
+                    break
+                case 4:
+                case 6:
+                case 9:
+                case 11:
+                    ele.innerText = `Tháng ${monthy} có 30 ngày`
+                    break
+            }
+
+        }
+    }
+</script>
+</body>
+</html>
