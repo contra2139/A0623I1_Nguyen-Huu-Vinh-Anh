@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Nam_nhuan</title>
+</head>
+<body>
+<h3>TÍNH NĂM NHUẬN</h3>
+<label for="nam_nhuan">Nhập năm cần tính</label>
+<input type="number" id="nam_nhuan" name="nam">
+<button onclick="leapYear()" id="button1">Click xem đúng năm nhuận không</button>
+<div id="nhuan"></div>
+<script>
+    function leapYear() {
+        let xxxx = document.getElementById('nam_nhuan').value;
+        if (xxxx % 4 === 0) {
+            if (xxxx % 100 === 0) {
+                if (xxxx % 400 === 0) {
+                    document.getElementById('nhuan').innerText = (xxxx + ' là năm nhuận');
+                } else {
+                    document.getElementById('nhuan').innerText = (xxxx + ' không phải là năm nhuận');
+                }
+            } else {
+                document.getElementById('nhuan').innerText = (xxxx + ' là năm nhuận');
+            }
+        } else {
+            document.getElementById('nhuan').innerText = (xxxx + ' không phải là năm nhuận');
+        }
+    }
+</script>
+</body>
+</html>

@@ -9,7 +9,9 @@
             padding-top: 10px;
             display: flex;
             justify-content: center;
-            color: darkred;}
+            color: darkred;
+        }
+
         h4 {
             background: wheat;
             color: darkblue;
@@ -21,6 +23,7 @@
 </head>
 <body>
 <h2>BẢNG TÍNH SỐ NGÀY TRONG THÁNG</h2>
+
 <label for="month_1">Vui lòng cho biết THÁNG đầu tiên </label>
 <input type="number" id="month_1" name="month">
 <button onclick="dayOfMonth(month_1.value, monthly)" id="bt1">Tính số ngày</button>
@@ -35,7 +38,7 @@
 <div id="monthly2"></div>
 
 <script>
-    function dayOfMonth(monthy,ele) {
+    function dayOfMonth(monthy, ele) {
         if (monthy <= 0 || monthy > 12) {
             alert("Dữ liệu nhập vào không hợp lệ - Vui lòng nhập lại");
         } else {
