@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <title>So Nguyen to</title>
+</head>
+<body>
+<label for="inputCount"> Nhap SL so nguyen to can in: </label>
+<input type="number" id="inputCount">
+<button onclick="countPrime()">In</button>
+<div id="kt"></div>
+<script>
+    let count = 0;
+
+    function checkPrime(a) {
+        if (a === 1) {
+            return false;
+        }
+
+        for (let i = 2; i < a; i++) {
+            if (a % i === 0) {
+                return false;
+            }
+        }
+        return true;
+    }
+
+    function countPrime() {
+        let i = 1;
+        while (true) {
+            if (count === Number.parseInt(inputCount.value)) {
+                return;
+            }
+            if (checkPrime(i)) {
+                count++;
+                kt.innerHTML += i + ' is prime<br>';
+                console.log(i + ' is prime')
+            }
+            i++;
+        }
+    }
+
+</script>
+</body>
+</html>
