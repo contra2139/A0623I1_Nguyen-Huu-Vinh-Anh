@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+
+    <title>Bang_cuu_chuong</title>
+    <style>
+
+        table {
+            border: 5px solid black;
+            width: 1000px;
+            border-spacing: 0;
+            padding: 3px;
+            background: beige;
+            color: darkblue;
+        }
+        td {
+            border: 1px solid black;
+            padding: 3px;
+        }
+        h1 {
+            color: #FF4500;
+        }
+    </style>
+</head>
+<body>
+<h1>Bảng Cửu chương</h1>
+<div id="bang_cuu_chuong"></div>
+
+<script>
+    const myCuuchuong = document.getElementById("bang_cuu_chuong");
+    function tao_BangCuuChuong(){
+        let bang = "<table>";
+        for (let i = 1; i <= 9; i++) {
+            bang += "<tr>";
+            for (let j = 1; j <= 9; j++){
+                bang += `<td>${j} x ${i} = ${i * j}</td>`;
+            }
+            bang += "</tr>";
+        }
+        bang += "</table>";
+        myCuuchuong.innerHTML = bang;
+    }
+    tao_BangCuuChuong();
+</script>
+</body>
+</html>

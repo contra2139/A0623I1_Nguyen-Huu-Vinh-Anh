@@ -1,0 +1,21 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>SumTotal</title>
+</head>
+<body>
+<h2>Total</h2>
+<p id='total'></p>
+<p id="result"></p>
+<script>
+    let total = 0;
+    let num = prompt('Nhap mot so: ');
+    let i = 1;
+    for (; i <= num; i += 1) {
+        total += i;
+    }
+    document.getElementById("result").innerText = total
+</script>
+</body>
+</html>
