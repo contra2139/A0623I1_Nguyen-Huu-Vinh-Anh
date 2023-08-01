@@ -1,0 +1,28 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Nhiet_do</title>
+</head>
+<body>
+
+<script>
+    function getTemperature() {
+        let temperature = parseFloat(prompt("Vui long nhap nhiet do ban thich: ",));
+        while (isNaN(temperature) || temperature > 100 || temperature < 20) {
+            temperature = parseFloat(prompt("Xin nhap so nhiet do hop le tu 20 do den 100 do: "));
+        }
+        if (temperature > 100) {
+            alert("Nhiet do qua cao! Yeu cau giam nhiet do");
+        } else if (temperature < 20) {
+            alert("Nhiet do qua thap! Yeu cau tang nhiet do");
+        } else {
+            alert("Nhiet do trong nguong an toan");
+        }
+    }
+
+    getTemperature();
+
+</script>
+</body>
+</html>
