@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Js_Array</title>
+</head>
+<style>
+    body {
+        padding-top: 50px;
+    }
+
+    h1 {
+        color: darkblue;
+    }
+</style>
+<body>
+<h1>Sample Array</h1>
+<label for="txtValue"></label>
+<input type="text" id="txtValue" name="txtValue">
+<label for="btnAdd"></label>
+<input type="button" id="btnAdd" value="add" onclick="add_element_to_Array()"/>
+<label for="btnDisplay"></label>
+<input type="button" id="btnDisplay" value="Display" onclick="display_Array()"/>
+<div id="rs"></div>
+<script>
+    let x = 0;
+    let array = [];
+
+    function add_element_to_Array() {
+        array[x] = document.getElementById("txtValue").value;
+        alert("Element: " + array[x] + " Added at index " + x);
+        x++;
+        document.getElementById("txtValue").value = ""; // Removed the extra space after "txtValue"
+    }
+
+    function display_Array() {
+        let e = "<hr/>";
+        for (let i = 0; i < array.length; i++) {
+            e += "element: " + i + " = " + array[i] + "<br/>"; // Added quotes around <br/>
+        }
+        document.getElementById('rs').innerHTML = e;
+    }
+</script>
+</body>
+</html>

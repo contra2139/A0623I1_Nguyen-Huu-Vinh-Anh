@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Daysofibonacci</title>
+</head>
+<body>
+<label for="inputCountFib">Nhap bao nhieu so trong day fibonacci</label>
+<input type="number" id="inputCountFib" name="fibonacci">
+<button onclick="generateFibonacci()">In</button>
+<div id="fib"></div>
+
+<script>
+    function generateFibonacci() {
+        const inputCountFib = document.getElementById("inputCountFib");
+        const number = parseInt(inputCountFib.value);
+        let n1 = 0;
+        let n2 = 1;
+        let fibSeq = [n1, n2];
+
+        for (let i = 2; i < number; i++) {
+            let x = n1 + n2;
+            fibSeq.push(x);
+            n1 = n2;
+            n2 = x;
+        }
+
+        const fibDiv = document.getElementById("fib");
+        fibDiv.textContent = "Day Fibonacci: " + fibSeq.join(", ");
+    }
+</script>
+</body>
+</html>
