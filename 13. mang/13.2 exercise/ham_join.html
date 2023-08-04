@@ -22,8 +22,8 @@
 <script>
 function join_Array(){
   let inputValue = document.getElementById("myJoin").value;
-  let colors = inputValue.split(", ");
-  let myResult = colors.join(", ");
+  let colors = inputValue.split(",");
+  let myResult = colors.join("*");
   document.getElementById("hamJoin").innerHTML = myResult;
 }
 

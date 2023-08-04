@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>Insert dashes between even numbers</title>
+  <style>
+    body {
+      padding-top: 75px;
+    }
+
+    h1 {
+      color: darkred;
+    }
+  </style>
+</head>
+<body>
+<h1>Insert dashes between even numbers</h1>
+<label for="my_Number">My_number (only number) :</label>
+<input type="number" id="my_Number" name="insertArray">
+<input type="button" id="btn_insert" value="number_even" onclick="insertDashes()">
+<div id="isnumber"></div>
+<script>
+  function insertDashes() {
+    const insert_num = document.getElementById("my_Number").value;
+    const sp_num = insert_num.toString();
+    const rs = [sp_num[0]];
+
+    for (let i = 1; i < sp_num.length; i++) {
+      if (parseInt(sp_num[i - 1]) % 2 === 0 && parseInt(sp_num[i]) % 2 === 0) {
+        rs.push("-", sp_num[i]);
+      } else {
+        rs.push(sp_num[i]);
+      }
+    }
+
+    document.getElementById("isnumber").innerHTML = rs.join('');
+  }
+</script>
+</body>
+</html>
