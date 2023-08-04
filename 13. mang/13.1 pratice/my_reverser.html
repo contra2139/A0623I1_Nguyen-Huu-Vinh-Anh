@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <title>myReverser</title>
+    <style>
+        body {
+            padding-top: 50px;
+        }
+
+        h1 {
+            color: darkblue;
+        }
+    </style>
+</head>
+
+<body>
+<h1>Reverser Array</h1>
+<label for="ArrayValue">Enter values (dùng dấu phẩy phân cách):</label>
+<input type="text" id="ArrayValue" name="ArrayValue">
+<input type="button" id="btn_reverser" value="Reverse" onclick="reverser_number()">
+<div id="rv"></div>
+<script>
+    function reverser_number() {
+        let inputValue = document.getElementById("ArrayValue").value;
+        let arr1 = inputValue.split(",");
+        let first = 0;
+        let last = arr1.length - 1;
+        while (first < last) {
+            let b = arr1[first];
+            arr1[first] = arr1[last];
+            arr1[last] = b;
+            first++;
+            last--;
+        }
+        document.getElementById("rv").innerText = arr1.join(", ");
+    }
+</script>
+</body>
+
+</html>
