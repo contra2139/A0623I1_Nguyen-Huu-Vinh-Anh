@@ -1,0 +1,62 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Max Integer</title>
+    <style>
+        .highlight {
+            font-weight: bold;
+            color: darkslateblue;
+            background: seashell;
+        }
+
+        .index_highlight {
+            font-weight: bold;
+            color: darkslateblue;
+            background: #A9A9A9;
+        }
+    </style>
+</head>
+<body>
+<h1>Max integer</h1>
+<label>Input Number:</label><br>
+<input type="number" id="input0"><br>
+<input type="number" id="input1"><br>
+<input type="number" id="input2"><br>
+<input type="number" id="input3"><br>
+<input type="number" id="input4"><br>
+<input type="number" id="input5"><br>
+<input type="number" id="input6"><br>
+<input type="number" id="input7"><br>
+<input type="number" id="input8"><br>
+<input type="number" id="input9"><br>
+<button onclick="max_Numbers()">max_int</button>
+<div id="result_2"></div>
+
+<script>
+    function max_Numbers() {
+        const inputs = [];
+        for (let i = 0; i <= 9; i++) {
+            const inputValue = parseInt(document.getElementById(`input${i}`).value);
+            inputs.push(inputValue);
+        }
+
+        let maxElement = inputs[0];
+        let indexElement = [1];
+        for (let i = 1; i < inputs.length; i++) {
+            if (inputs[i] > maxElement) {
+                maxElement = inputs[i];
+                indexElement = [i + 1];
+            } else if (inputs[i] === maxElement) {
+                indexElement = Array.from(indexElement);
+                indexElement.push(i +1);
+            }
+        }
+
+        const resultElement = document.getElementById("result_2");
+        resultElement.innerHTML =`Max the Numbers is: <h2><span class ="highlight">${maxElement}</span></h2>
+          <br>Index is: <h2><span class ="index_highlight">${indexElement.join(' - ')} </span> </h2>`;
+    }
+</script>
+</body>
+</html>
