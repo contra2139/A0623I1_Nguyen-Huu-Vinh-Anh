@@ -1,0 +1,56 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Average</title>
+    <style>
+        .center-container{
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            min-height: 100vh;
+        }
+        .highlight3 {
+            font-weight: bold;
+            color: darkslateblue;
+            background: seashell;
+        }
+
+        .ave_highlight {
+            font-weight: bold;
+            color: darkslateblue;
+            background: #A9A9A9;
+        }
+
+        h1 {
+            color: darkslateblue;
+        }
+    </style>
+</head>
+<body>
+<h1>Average</h1>
+<button onclick="aveNumber()">Ave_int</button>
+<div class="center-container">
+    <div id="result_3"></div>
+    <script>
+        function aveNumber() {
+            let arr3 = [];
+            let sum = 0;
+
+            for (let i = 0; i < 15; i++) {
+                let myRandom = Math.floor(Math.random() * 1000);
+                arr3[i] = myRandom;
+                sum += myRandom;
+            }
+
+            let average = sum / arr3.length;
+
+            const resultElement = document.getElementById("result_3");
+            resultElement.innerHTML = `<h4>Random number in array</h4> <h3><span class="highlight3"> ${arr3.join(', ')}</span></h3> <br> <h4>Average</h4><h3><span class="ave_highlight">${average.toFixed(2)}</span></h3>
+       <h4>Sum</h4><h3><span class="ave_highlight">${sum.toFixed(2)}</span></h3>`;
+
+        }
+    </script>
+</div>
+</body>
+</html>
