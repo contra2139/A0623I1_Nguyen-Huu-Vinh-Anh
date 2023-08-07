@@ -1,0 +1,59 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>countString</title>
+  <style>
+    body {
+      padding-top: 50px;
+    }
+
+    h1 {
+      color: darkblue;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+    }
+    h2 {
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      font-weight: bold;
+      color: lavenderblush;
+      background: darkcyan;
+    }
+    .input_container {
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      min-height: 15vh;
+      font-weight: bold;
+
+    }
+    .title {
+      font-size: medium;
+      font-weight: unset;
+      display: flex;
+      
+    }
+  </style>
+</head>
+<body>
+<h1>Count String</h1>
+<h2><span><label for="countString">Enter the Character string <span class="title"><br>(Use commas to separate characters)</span></label></span></h2>
+<div class="input_container">
+  <input type="text" id="countString" name="count">
+  <input type="button" id="btn_count_str" value="Count_String" onclick="(count_Str())">
+</div>
+<div id="count_str"></div>
+<script>
+  function count_Str(){
+    const count_Str = document.getElementById("countString").value;
+    const numStr = count_Str.split(",");
+    const numElement = numStr.length;
+    const result_numStr = document.getElementById("count_str");
+    result_numStr.innerHTML = ` Character in String are: ${numElement} element`
+  }
+</script>
+</body>
+</html>
