@@ -1,0 +1,54 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Random 2D array</title>
+    <style>
+        .center-container2 {
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            min-height: 100vh;
+        }
+    </style>
+</head>
+<body>
+<h2>Random 2D Array</h2>
+<button onclick="createRandom2DArray()">Array2D</button>
+<button onclick="print2DArray()">printArray2D</button>
+<div class="center-container2">
+    <div id="result_24"></div>
+    <div id="output"></div>
+    <script>
+        let arr4 = [];
+
+        function createRandom2DArray(rows = 5, cols = 4) {
+            arr4 = [];
+            for (let i = 0; i < rows; i++) {
+                const row = [];
+                for (let j = 0; j < cols; j++) {
+                    const randomNum = Math.floor(Math.random() * 100);
+                    row.push(randomNum);
+                }
+                arr4.push(row);
+            }
+            const outputElement = document.getElementById('result_24');
+            outputElement.innerHTML = `Create 2D array <br> ${arr4.map(row => row.join(', ')).join('<br>')} `;
+        }
+
+        function print2DArray() {
+            const outputElement = document.getElementById('output');
+            outputElement.innerHTML = '';
+
+            for (let i = 0; i < arr4.length; i++) {
+                outputElement.innerHTML += `row ${i}<br>`;
+                for (let j = 0; j < arr4[i].length; j++) {
+                    outputElement.innerHTML += `" ${arr4[i][j]}"<br>`;
+                }
+            }
+        }
+
+    </script>
+</div>
+</body>
+</html>

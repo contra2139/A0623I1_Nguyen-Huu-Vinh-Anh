@@ -1,0 +1,59 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>array_Reverser</title>
+  <style>
+    body {
+      padding-top: 50px;
+    }
+
+    h1 {
+      color: darkblue;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+    }
+    h2 {
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      font-weight: bold;
+      color: lavenderblush;
+      background: darkcyan;
+    }
+    .input_container {
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      min-height: 15vh;
+      font-weight: bold;
+    }
+  </style>
+</head>
+<body>
+<h1>Reverser Array</h1>
+<h2><span><label for="arrayReverser">Enter valuesArray ('dùng dấu phẩy phân cách các phần tử')</label></span></h2>
+<div class="input_container">
+<input type="text" id="arrayReverser" name="arrayReverser">
+<input type="button" id="btn_rev_arr" value="Reverse_Array" onclick="(rev_Array())">
+</div>
+<div id="arrRev"></div>
+<script>
+  function rev_Array() {
+    let input_Value = document.getElementById("arrayReverser").value;
+    let arr1 = input_Value.split(",");
+    let first = 0;
+    let last = arr1.length - 1;
+    while (first < last) {
+      let b = arr1[first];
+      arr1[first] = arr1[last];
+      arr1[last] = b;
+      first++;
+      last--;
+    }
+    document.getElementById("arrRev").innerText = arr1.join("- ");
+  }
+</script>
+</body>
+</html>
