@@ -43,16 +43,18 @@
   function rev_Array() {
     let input_Value = document.getElementById("arrayReverser").value;
     let arr1 = input_Value.split(",");
-    let first = 0;
-    let last = arr1.length - 1;
-    while (first < last) {
-      let b = arr1[first];
-      arr1[first] = arr1[last];
-      arr1[last] = b;
-      first++;
-      last--;
-    }
-    document.getElementById("arrRev").innerText = arr1.join("- ");
+    // let first = 0;
+    // let last = arr1.length - 1;
+    // while (first < last) {
+    //   let b = arr1[first];
+    //   arr1[first] = arr1[last];
+    //   arr1[last] = b;
+    //   first++;
+    //   last--;}
+     let xx = arr1.reverse();
+
+    document.getElementById("arrRev").innerText = xx.join("- ");
+
   }
 </script>
 </body>
