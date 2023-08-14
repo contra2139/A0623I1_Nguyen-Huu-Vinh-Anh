@@ -1,0 +1,58 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Check Prime</title>
+    <style>
+        .boxContainer {
+            background: antiquewhite;
+            color: firebrick;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+        }
+
+        .boxCheck {
+            display: flex;
+            justify-content: end;
+            min-height: 5vh;
+        }
+    </style>
+</head>
+<body>
+<div class="boxContainer">
+    <label for="checkPrime"> Nhập số cần kiểm tra: </label>
+    <input type="number" id="checkPrime">
+</div>
+<div class="boxCheck">
+    <button onclick="checkPrime()"> Kiểm tra </button>
+</div>
+
+<div id="checkResult"></div>
+<script>
+    function checkPrime() {
+        let number = parseFloat(document.getElementById("checkPrime").value);
+        let result = document.getElementById("checkResult");
+
+        if (isPrime(number)) {
+            result.innerHTML = number + " là số nguyên tố.";
+        } else {
+            result.innerHTML = number + " không là số nguyên tố.";
+        }
+    }
+
+    function isPrime(a) {
+        if (a < 2) {
+            return false;
+        } else if (a > 2) {
+            for (let i = 2; i <= Math.sqrt(a); i++) {
+                if (a % i === 0) {
+                    return false;
+                }
+            }
+            return true;
+        }
+    }
+</script>
+</body>
+</html>

@@ -1,0 +1,75 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>ConvertFeetMeter</title>
+</head>
+<body>
+<h1>Convert Feet_Meter</h1>
+
+<label for="myConvert">Convert</label><br>
+<input type="number" id="myConvert" name="amount">
+
+<label for="from_Unit"></label>
+<select id="from_Unit" name="from_Unit">
+    <option value="feet">FEET</option>
+    <option value="meter">METER</option>
+</select>
+
+<label for="yourUnit">To Convert</label>
+<select id="yourUnit" name="yourUnits">
+    <option value="feet">FEET</option>
+    <option value="meter">METER</option>
+</select>
+<br><br>
+
+<button onclick="convert()">Convert</button>
+<button onclick="resetNumber()">Reset</button>
+<div id="rsConvert"></div>
+<script>
+    function convert() {
+        const unit = parseFloat(document.getElementById("myConvert").value);
+        if(unit < 0){
+            document.getElementById("rsConvert").innerHTML = "please, input again number"
+            return
+        }
+
+        const fromUnits = document.getElementById('from_Unit').value;
+        const yourUnits = document.getElementById('yourUnit').value;
+        let convertUnit;
+        let myResult
+
+        if (fromUnits === "feet" && yourUnits === "meter") {
+            myResult = footToMeter(unit);
+            convertUnit = "feet"
+        } else if (fromUnits === "meter" && yourUnits === "feet") {
+            myResult = meterToFeet(unit);
+            convertUnit = "meter"
+        } else if (fromUnits === "feet" && yourUnits === "feet") {
+            myResult = unit;
+            convertUnit = "feet"
+        } else if (fromUnits === "meter" && yourUnits === "meter") {
+            myResult = unit;
+            convertUnit = "meter"
+        } else {
+            myResult = " Invalid conversion, please enter the appropriate number "
+        }
+        document.getElementById("rsConvert").innerHTML = `Convert : ${unit}  ${convertUnit} = ${myResult} `;
+    }
+    function resetNumber(){
+        document.getElementById("myConvert").value = "";
+        document.getElementById("rsConvert").innerHTML = "";
+        document.getElementById("from_Unit").selectedIndex = 0;
+        document.getElementById("yourUnit").selectedIndex = 0
+    }
+
+    function footToMeter(foot) {
+        return (foot * 0.305).toFixed(2) + " meter"
+    }
+
+    function meterToFeet(meter) {
+        return (meter * 3.279).toFixed(2) + " feet"
+    }
+</script>
+</body>
+</html>
