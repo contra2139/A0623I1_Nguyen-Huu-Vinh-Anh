@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Ham_1.03</title>
+
+</head>
+<body>
+<label for="numberC">Number 1</label>
+<input type="number" id="numberC">
+<label for="numberD">Number 2</label>
+<input type="number" id="numberD">
+<button onclick="processing()">Processing</button>
+<div id="rsNumThree"></div>
+<script>
+  function processing(){
+    let numC = parseFloat(document.getElementById("numberC").value);
+    let numD = parseFloat(document.getElementById("numberD").value);
+    if (!isNaN(numC) && !isNaN(numD)){
+      let pro = compareTwo(numC,numD);
+      if(pro < 0){
+        alert("value of number 1 is greater than number 2")
+      }
+      else {
+        document.getElementById("rsNumThree").innerHTML = `Result two number: ${numC+numD}`;
+      }
+    }
+
+    function compareTwo(c,d){
+      if (c > d){
+        return -1;
+      }
+      else{
+        return 1;
+      }
+    }
+  }
+</script>
+</body>
+</html>
