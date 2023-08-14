@@ -1,0 +1,23 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Ham_1.02</title>
+</head>
+<body>
+<label for="number_Plus">Input Number</label>
+<input type="number" id="number_Plus">
+<button onclick="displayNumber()">click</button>
+<div id="rsNumber"></div>
+<script>
+  function displayNumber(){
+    let b = parseFloat(document.getElementById("number_Plus").value);
+    let rs = hamTwo(b)
+    document.getElementById("rsNumber").innerText = `Result return is ${rs}`;
+  }
+  function hamTwo(a){
+        return a+1;
+      }
+</script>
+</body>
+</html>
